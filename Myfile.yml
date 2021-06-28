@@ -6,7 +6,6 @@ services:
     depends_on:
       - chrome
       - firefox
-
     environment:
       TP_API_KEY: "6FAoQ5sxPVJLvU9Td50nMcW6sVWuGPrON-D5UExRYJk1"
       TP_JOB_ID: "xBxgAMJRlESuJnswDFrQvA"
@@ -15,10 +14,7 @@ services:
       FIREFOX: "firefox:4444"
   chrome:
     image: selenium/standalone-chrome
-    volumes:
-	- /dev/shm:/dev/shm
+    shm_size: '1gb'
   firefox:
     image: selenium/standalone-firefox
-    volumes:
-	- /dev/shm:/dev/shm
-	
+    shm_size: '1gb'
