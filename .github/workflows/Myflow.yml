@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run Testproject Job
-        run: docker-compose -f k8s.yml up -d
+        run: kubectl apply -f k8s.yml
