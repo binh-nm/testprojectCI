@@ -156,11 +156,11 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: testproject-secrets
-                  key: TP_API_KEY  
+                  key: "xXJuqTnpSdJKbQNhbrvrGOqZcl4ffXdzyD3X5_Wx6Xg1"  
               valueFrom:
                 secretKeyRef:
                   name: testproject-secrets
-                  key: TP_API_KEY             
+                  key: "xXJuqTnpSdJKbQNhbrvrGOqZcl4ffXdzyD3X5_Wx6Xg1"             
             - name: TP_SDK_PORT # Agent will listen on port 8686 for SDK connections
               value: "8686"
           image: testproject/agent:latest
