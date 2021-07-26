@@ -1,12 +1,17 @@
-name: Configuration Check
+name: Schedule Run Staging
+
 on:
-  repository_dispatch:
-    types:
-      - configuration-check
+  schedule:
+    - cron:  '40 0,11 * * *'
+
+  workflow_dispatch:
+
 jobs:
-  check:
-    name: Run check
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Say hello
-        run: echo Hello
+      - uses: actions/checkout@v2
+
+      - name: Run Testproject Job
+        run: docker-compose -f docker-compose-github.yml up --abort-on-container-exit
